@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="ed61b2c0-0c62-482f-bc60-737567262ea8">
+  <producedTypes>
+    <selectionType typeId="3872402c-6e5c-44fe-ac38-55545418c65e" valueTypeId="2117746d-ed0d-4472-8579-dc1f2f7c1593"/>
+    <listType typeId="4b0f271c-5e51-409d-8fcf-66f13e815949" valueTypeId="938719cb-bd27-496a-8035-b4fa7bbcadc6"/>
+    <managerType typeId="4c8a2cfb-f40c-4025-909f-3ded9b4c1edb" valueTypeId="cf83921f-62a0-4caa-9a77-651042ff2b93"/>
+    <recordSetType typeId="875ab0c3-99dc-41e8-91fe-0a15d8bb3dac" valueTypeId="4519f06f-ecb8-4f6f-96f8-1d3f49112bf6"/>
+    <recordKeyType typeId="a31ea161-08cb-4c41-8fc7-2c65da29365c" valueTypeId="09f7d48a-65ba-4e5b-a9f0-3bf90f859811"/>
+    <recordType typeId="7db1f874-e901-4bd2-bdb5-e37c18032006" valueTypeId="00141e61-72b0-4e5a-883e-d06511d81dc6"/>
+  </producedTypes>
+  <name>ВКМ_ДниОтпуска</name>
+  <synonym>
+    <key>ru</key>
+    <value>Дни отпуска</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="8f7fcae9-26d7-4e52-ad2a-395b4540adc6">
+    <name>ДнейОтпуска</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дней отпуска</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <dimensions uuid="d45e08c8-9330-4885-b2b8-3fce5219c7f0">
+    <name>Сотрудник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сотрудник</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="61520ee5-1d45-4b1e-bca1-374755b811d5">
+    <name>ВидРасчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид расчета</value>
+    </synonym>
+    <type>
+      <types>ChartOfCalculationTypesRef.ВКМ_ОсновныеНачисления</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

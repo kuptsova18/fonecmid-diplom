@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="efb96817-bde5-4f15-95fc-ed36de028e4a">
+  <producedTypes>
+    <objectType typeId="4c0c0da9-defc-4221-85eb-68fe7e6c10ec" valueTypeId="3ad45316-c674-4346-a539-5a3473f5f02b"/>
+    <refType typeId="ae5ee2da-f3ab-4247-85ee-20292f17858e" valueTypeId="53ada4dd-b4be-400f-b0a2-04df89b82af8"/>
+    <selectionType typeId="c0309c1a-64d4-4439-9bb2-a573c019c2fb" valueTypeId="85dfdc97-b841-4f11-86d0-bfe38a6581e7"/>
+    <listType typeId="9c7a4ad7-bd29-4d30-9e14-676fecda0acf" valueTypeId="490c74c9-fa8f-45c0-aa3d-b85e68050378"/>
+    <managerType typeId="706cd9f2-f320-405d-92bb-536869335266" valueTypeId="c875538c-8c19-47fa-86fb-d353fe7e99a3"/>
+  </producedTypes>
+  <name>ВКМ_УведомленияТелеграмБоту</name>
+  <synonym>
+    <key>ru</key>
+    <value>Уведомления телеграм боту</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <attributes uuid="800d2eba-dd53-464b-b04c-2aff50f1f3ff">
+    <name>ВКМ_Текст</name>
+    <synonym>
+      <key>ru</key>
+      <value>Текст</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+</mdclass:Catalog>
