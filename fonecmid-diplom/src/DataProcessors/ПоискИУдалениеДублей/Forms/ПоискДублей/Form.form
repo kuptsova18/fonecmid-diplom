@@ -815,6 +815,9 @@
               <valuesPicture xsi:type="core:PictureRef">
                 <picture>CommonPicture.ПиктограммыЭлементов</picture>
               </valuesPicture>
+              <border xsi:type="core:BorderDef">
+                <width>1</width>
+              </border>
               <fileDragMode>AsFileRef</fileDragMode>
             </extInfo>
           </items>
@@ -926,6 +929,9 @@
                 <valuesPicture xsi:type="core:PictureRef">
                   <picture>StdPicture.MoveRight</picture>
                 </valuesPicture>
+                <border xsi:type="core:BorderDef">
+                  <width>1</width>
+                </border>
               </extInfo>
             </items>
             <items xsi:type="form:FormField">
@@ -3155,6 +3161,9 @@
                   <valuesPicture xsi:type="core:PictureRef">
                     <picture>StdPicture.MoveRight</picture>
                   </valuesPicture>
+                  <border xsi:type="core:BorderDef">
+                    <width>1</width>
+                  </border>
                 </extInfo>
               </items>
               <items xsi:type="form:FormField">
@@ -3752,6 +3761,9 @@
                     <autoMaxHeight>true</autoMaxHeight>
                     <verticalStretch>true</verticalStretch>
                     <valuesPicture xsi:type="form:FormPicture"/>
+                    <border xsi:type="core:BorderDef">
+                      <width>1</width>
+                    </border>
                   </extInfo>
                 </items>
                 <items xsi:type="form:FormField">

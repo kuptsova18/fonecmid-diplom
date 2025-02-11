@@ -5,8 +5,6 @@
     <key>ru</key>
     <value>Физические лица клиент сервер локализация</value>
   </synonym>
-  <clientManagedApplication>true</clientManagedApplication>
   <server>true</server>
-  <externalConnection>true</externalConnection>
-  <clientOrdinaryApplication>true</clientOrdinaryApplication>
+  <serverCall>true</serverCall>
 </mdclass:CommonModule>

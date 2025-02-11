@@ -78,6 +78,9 @@
         <valuesPicture xsi:type="core:PictureRef">
           <picture>CommonPicture.СостоянияРасширенийКонфигурации</picture>
         </valuesPicture>
+        <border xsi:type="core:BorderDef">
+          <width>1</width>
+        </border>
         <fileDragMode>AsFileRef</fileDragMode>
       </extInfo>
     </items>
