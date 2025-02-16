@@ -37,46 +37,32 @@
 				</v8:item>
 			</title>
 		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОсталосьДнейОтпуска</dataPath>
+			<field>ОсталосьДнейОтпуска</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Осталось дней отпуска</v8:content>
+				</v8:item>
+			</title>
+		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ
 	ВКМ_ДниОтпускаОбороты.Сотрудник КАК Сотрудник,
 	ВКМ_ДниОтпускаОбороты.ДнейОтпускаОборот КАК ДнейОтпускаПоПлану,
-	СУММА(ЕСТЬNULL(РАЗНОСТЬДАТ(ВКМ_ОсновныеНачисления.ПериодДействияНачало, ВКМ_ОсновныеНачисления.ПериодДействияКонец, ДЕНЬ), 0)) КАК ИспользованоДнейОтпуска
+	СУММА(ЕСТЬNULL(РАЗНОСТЬДАТ(ВКМ_ОсновныеНачисления.ПериодДействияНачало, ВКМ_ОсновныеНачисления.ПериодДействияКонец, ДЕНЬ), 0)) КАК ИспользованоДнейОтпуска,
+	ВКМ_ДниОтпускаОбороты.ДнейОтпускаОборот - СУММА(ЕСТЬNULL(РАЗНОСТЬДАТ(ВКМ_ОсновныеНачисления.ПериодДействияНачало, ВКМ_ОсновныеНачисления.ПериодДействияКонец, ДЕНЬ), 0)) КАК ОсталосьДнейОтпуска
 ИЗ
 	РегистрНакопления.ВКМ_ДниОтпуска.Обороты(, , , ВидРасчета = &amp;ВидРасчета) КАК ВКМ_ДниОтпускаОбороты
 		ЛЕВОЕ СОЕДИНЕНИЕ РегистрРасчета.ВКМ_ОсновныеНачисления КАК ВКМ_ОсновныеНачисления
 		ПО ВКМ_ДниОтпускаОбороты.Сотрудник = ВКМ_ОсновныеНачисления.Сотрудник
-			И ВКМ_ДниОтпускаОбороты.ВидРасчета = ВКМ_ОсновныеНачисления.ВидРасчета
-ГДЕ
-	ВКМ_ОсновныеНачисления.ПериодРегистрации &gt;= &amp;НачалоПериода
-	И ВКМ_ОсновныеНачисления.ПериодРегистрации &lt;= &amp;КонецПериода
+			И (ВКМ_ОсновныеНачисления.ВидРасчета = &amp;ВидРасчета)
 
 СГРУППИРОВАТЬ ПО
 	ВКМ_ДниОтпускаОбороты.Сотрудник,
 	ВКМ_ДниОтпускаОбороты.ДнейОтпускаОборот</query>
 	</dataSet>
-	<calculatedField>
-		<dataPath>ОсталосьДнейОтпуска</dataPath>
-		<expression>ДнейОтпускаПоПлану- ИспользованоДнейОтпуска</expression>
-		<title xsi:type="v8:LocalStringType">
-			<v8:item>
-				<v8:lang>ru</v8:lang>
-				<v8:content>Осталось дней отпуска</v8:content>
-			</v8:item>
-		</title>
-	</calculatedField>
-	<totalField>
-		<dataPath>ДнейОтпускаПоПлану</dataPath>
-		<expression>Сумма(ДнейОтпускаПоПлану)</expression>
-	</totalField>
-	<totalField>
-		<dataPath>ИспользованоДнейОтпуска</dataPath>
-		<expression>Сумма(ИспользованоДнейОтпуска)</expression>
-	</totalField>
-	<totalField>
-		<dataPath>ОсталосьДнейОтпуска</dataPath>
-		<expression>Сумма(ОсталосьДнейОтпуска)</expression>
-	</totalField>
 	<parameter>
 		<name>НачалоПериода</name>
 		<title xsi:type="v8:LocalStringType">
@@ -157,6 +143,9 @@
 					<dcsset:field>ДнейОтпускаПоПлану</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ИспользованоДнейОтпуска</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>ОсталосьДнейОтпуска</dcsset:field>
 				</dcsset:item>
 			</dcsset:selection>
@@ -170,15 +159,6 @@
 				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">
-				<dcsset:groupItems>
-					<dcsset:item xsi:type="dcsset:GroupItemField">
-						<dcsset:field>Сотрудник</dcsset:field>
-						<dcsset:groupType>Items</dcsset:groupType>
-						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
-						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
-						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
-					</dcsset:item>
-				</dcsset:groupItems>
 				<dcsset:order>
 					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
 				</dcsset:order>
