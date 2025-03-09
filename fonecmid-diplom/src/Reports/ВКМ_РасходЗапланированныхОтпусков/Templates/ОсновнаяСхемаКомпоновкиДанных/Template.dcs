@@ -47,6 +47,14 @@
 				</v8:item>
 			</title>
 		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаОкончанияОтпуска</dataPath>
+			<field>ДатаОкончанияОтпуска</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаНачалаОтпуска</dataPath>
+			<field>ДатаНачалаОтпуска</field>
+		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ
 	ВКМ_ДниОтпускаОбороты.Сотрудник КАК Сотрудник,
@@ -54,7 +62,13 @@
 	СУММА(ЕСТЬNULL(РАЗНОСТЬДАТ(ВКМ_ОсновныеНачисления.ПериодДействияНачало, ВКМ_ОсновныеНачисления.ПериодДействияКонец, ДЕНЬ), 0)) КАК ИспользованоДнейОтпуска,
 	ВКМ_ДниОтпускаОбороты.ДнейОтпускаОборот - СУММА(ЕСТЬNULL(РАЗНОСТЬДАТ(ВКМ_ОсновныеНачисления.ПериодДействияНачало, ВКМ_ОсновныеНачисления.ПериодДействияКонец, ДЕНЬ), 0)) КАК ОсталосьДнейОтпуска
 ИЗ
-	РегистрНакопления.ВКМ_ДниОтпуска.Обороты(, , , ВидРасчета = &amp;ВидРасчета) КАК ВКМ_ДниОтпускаОбороты
+	РегистрНакопления.ВКМ_ДниОтпуска.Обороты(
+			,
+			,
+			,
+			ВидРасчета = &amp;ВидРасчета
+				И ДатаНачалаОтпуска &gt;= &amp;ДатаНачала
+				И ДатаОкончанияОтпуска &lt;= &amp;ДатаОкончания) КАК ВКМ_ДниОтпускаОбороты
 		ЛЕВОЕ СОЕДИНЕНИЕ РегистрРасчета.ВКМ_ОсновныеНачисления КАК ВКМ_ОсновныеНачисления
 		ПО ВКМ_ДниОтпускаОбороты.Сотрудник = ВКМ_ОсновныеНачисления.Сотрудник
 			И (ВКМ_ОсновныеНачисления.ВидРасчета = &amp;ВидРасчета)
@@ -79,7 +93,6 @@
 		</valueType>
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
 		<useRestriction>true</useRestriction>
-		<expression>&amp;Период.ДатаНачала</expression>
 	</parameter>
 	<parameter>
 		<name>КонецПериода</name>
@@ -97,7 +110,6 @@
 		</valueType>
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
 		<useRestriction>true</useRestriction>
-		<expression>&amp;Период.ДатаОкончания</expression>
 	</parameter>
 	<parameter>
 		<name>ВидРасчета</name>
@@ -130,6 +142,42 @@
 			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
 		</value>
 		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ДатаНачала</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата начала</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаНачала</expression>
+	</parameter>
+	<parameter>
+		<name>ДатаОкончания</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата окончания</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаОкончания</expression>
 	</parameter>
 	<settingsVariant>
 		<dcsset:name>Основной</dcsset:name>
