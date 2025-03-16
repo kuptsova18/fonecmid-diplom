@@ -61,7 +61,7 @@
     <fullTextSearch>Use</fullTextSearch>
     <useInTotals>true</useInTotals>
   </dimensions>
-  <dimensions uuid="f269ca53-378a-4bb1-abf0-a5ea8f09235e">
+  <dimensions uuid="a2014d8e-e7e0-4e11-8663-8465f2b9ce4e">
     <name>ДатаНачалаОтпуска</name>
     <synonym>
       <key>ru</key>
@@ -78,7 +78,7 @@
     <fullTextSearch>Use</fullTextSearch>
     <useInTotals>true</useInTotals>
   </dimensions>
-  <dimensions uuid="ee027369-87d0-405e-8b4b-09c37adc9ba5">
+  <dimensions uuid="14837cc3-e138-413e-9abf-17f83b22954b">
     <name>ДатаОкончанияОтпуска</name>
     <synonym>
       <key>ru</key>
