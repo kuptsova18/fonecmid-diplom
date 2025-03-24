@@ -53,22 +53,6 @@
     <maxValue xsi:type="core:UndefinedValue"/>
     <fullTextSearch>Use</fullTextSearch>
   </attributes>
-  <attributes uuid="f3db358e-3368-452a-8769-ccd42a10acc8">
-    <name>КалендарныеДни</name>
-    <synonym>
-      <key>ru</key>
-      <value>Календарные дни</value>
-    </synonym>
-    <type>
-      <types>Number</types>
-      <numberQualifiers>
-        <precision>10</precision>
-      </numberQualifiers>
-    </type>
-    <minValue xsi:type="core:UndefinedValue"/>
-    <maxValue xsi:type="core:UndefinedValue"/>
-    <fullTextSearch>Use</fullTextSearch>
-  </attributes>
   <dimensions uuid="beaed4b5-87aa-4979-8fb4-0cada369b517">
     <name>Сотрудник</name>
     <synonym>

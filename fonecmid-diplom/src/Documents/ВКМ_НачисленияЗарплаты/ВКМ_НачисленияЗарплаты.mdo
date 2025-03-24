@@ -26,6 +26,7 @@
   <registerRecords>CalculationRegister.ВКМ_ОсновныеНачисления</registerRecords>
   <registerRecords>AccumulationRegister.ВКМ_ВзаиморасчетыССотрудниками</registerRecords>
   <registerRecords>CalculationRegister.ВКМ_Удержания</registerRecords>
+  <registerRecords>AccumulationRegister.ВКМ_ДниОтпуска</registerRecords>
   <postInPrivilegedMode>true</postInPrivilegedMode>
   <unpostInPrivilegedMode>true</unpostInPrivilegedMode>
   <tabularSections uuid="a5297cc0-5fc9-4ed8-8339-1b7b3ffe1eb3">
